@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { useProducts } from '../context/ProductContext'
 
 export default function ProductForm({ editItem, onDone }){
+  const { add, update } = useProducts()
   const [form, setForm] = useState({ name:'', price:'', description:'' })
   useEffect(()=>{ if(editItem) setForm(editItem) },[editItem])
 
@@ -20,11 +22,14 @@ export default function ProductForm({ editItem, onDone }){
     <form className="card form" onSubmit={submit}>
       <h2>{form.id ? 'Edit Product' : 'Add Product'}</h2>
       <label>Product name<input value={form.name} onChange={e=>setForm({...form,name:e.target.value})} placeholder="e.g. Wireless Mouse" /></label>
-      <label>Price (AED)<input value={form.price} type="number" onChange={e=>setForm({...form,price:e.target.value})} /></label>
+      <label>Price ($)<input value={form.price} type="number" onChange={e=>setForm({...form,price:e.target.value})} /></label>
       <label>Description<textarea value={form.description} onChange={e=>setForm({...form,description:e.target.value})} /></label>
       <div className="actions">
         <button type="submit" className="btn primary">{form.id ? 'Save' : 'Add Product'}</button>
         <button type="button" className="btn" onClick={()=>{ setForm({ name:'', price:'', description:'' }); onDone && onDone(); }}>Reset</button>
+       {editItem && (
+         <button type="button" className="btn close" onClick={()=>{ setForm({ name:'', price:'', description:'' }); onDone && onDone(); }}>Close</button>
+       )}
       </div>
     </form>
   )

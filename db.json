@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Gaming Mouse",
+      "price": 1299,
+      "description": "RGB, ergonomic, wireless"
+    },
+    {
+      "id": "2",
+      "name": "Mechanical Keyboard",
+      "price": 3499,
+      "description": "Hot-swappable, blue switches"
+    },
+    {
+      "name": "cvbnasdfsgdsafdddsdfsdfdfsdsfsdssddsf",
+      "price": 72,
+      "description": "vbnm,asdfasdsdsdfdff",
+      "id": "a739"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ export default function App(){
     <div className="app">
       <header className="header">
         <h1>Product Manager</h1>
-        <p className="sub">React + Fetch AJAX | json-server mock API</p>
+        <p className="sub"></p>
       </header>
       <main className="container">
         <aside className="panel">
